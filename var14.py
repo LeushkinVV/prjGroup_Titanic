@@ -10,7 +10,7 @@ filename = "data.csv"
 
 def show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f):
 
-    st.image('Titanic.jpg')
+#    st.image('Titanic.jpg')
     st.header('Данные пассажиров Титаника')
     st.write('Для просмотра числа родственников у выживших и погибших пассажиров, выберите пол пассажира')
     option = st.selectbox('Значение поля Sex:', ['Мужской', 'Женский'])
