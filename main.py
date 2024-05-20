@@ -10,10 +10,10 @@
 
 import streamlit as st
 from var7 import var7_main
-#from varx2 import varx1_main
-#from varx3 import varx2_main
-#from varx4 import varx3_main
-#from varx5 import varx4_main
+from varx14 import var14_main
+#from var12 import var12_main
+#from varx3 import varx3_main
+#from varx4 import varx4_main
 
 st.header('Практическое занятие №11')
 # выводим картинку
@@ -21,7 +21,7 @@ st.image('titanic.jpg')
 # выводим текст заголоака
 
 st.header('Работа группы №3')
-variants = ['Вариант 7', 'Вариант x1', 'Вариант x2', 'Вариант x3', 'Вариант x4']
+variants = ['Вариант 7', 'Вариант 14', 'Вариант 12', 'Вариант x3', 'Вариант x4']
 
 chois = st.selectbox('Выберите вариант работы', ['выберите вариант']+variants)
 st.text('')
@@ -31,8 +31,8 @@ if chois == 'выберите вариант':
 elif chois == variants[0]:
     st.info(f'Представлен {chois}')
     var7_main()
-#elif chois == variants[1]:
-#    varx2_main()
+elif chois == variants[1]:
+    var14_main()
 #elif chois == variants[2]:
 #    varx3_main()
 #elif chois == variants[3]:
