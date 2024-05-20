@@ -10,7 +10,7 @@
 
 import streamlit as st
 from var7 import var7_main
-from varx14 import var14_main
+from var14 import var14_main
 #from var12 import var12_main
 #from varx3 import varx3_main
 #from varx4 import varx4_main
