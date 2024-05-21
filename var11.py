@@ -52,7 +52,7 @@ def var11_main():
     x = ['до 30', 'от 30 до 60', 'от 60']
     y = [val1, val2, val3]
     st.tab = {'Возраст пассажиров': x, 'Доля погибших пассажиров': y}
-    dataframe(tab)
+    st.dataframe(tab)
 
     fig = plt.figure(figsize=[10, 5])
     plt.bar(x, y)
