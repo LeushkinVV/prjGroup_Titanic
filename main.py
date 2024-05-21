@@ -10,8 +10,8 @@
 
 import streamlit as st
 from var7 import var7_main
-from var11 import var11_main
-from var12 import var12_main
+#from var11 import var11_main
+#from var12 import var12_main
 from var14 import var14_main
 from var17 import var17_main
 
@@ -31,10 +31,10 @@ if chois == 'выберите вариант':
 elif chois == variants[0]:
     st.info(f'Представлен {chois}')
     var7_main()
-elif chois == variants[1]:
-    var11_main()
-elif chois == variants[2]:
-    var12_main()
+#elif chois == variants[1]:
+#    var11_main()
+#elif chois == variants[2]:
+#    var12_main()
 elif chois == variants[3]:
     var14_main()
 elif chois == variants[4]:
