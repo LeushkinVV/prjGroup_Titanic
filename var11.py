@@ -60,4 +60,4 @@ def var11_main():
     plt.ylabel('Доля погибших пассажиров')
     plt.title('Диаграмма')
     plt.legend()
-    pyplot(fig)
+    st.pyplot(fig)
