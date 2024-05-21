@@ -1,4 +1,4 @@
-def var7_main():
+def var17_main():
     import streamlit as st
     import matplotlib.pyplot as plt
     st.title("Cтоимость билета у пассажиров по каждому пункту посадки")
