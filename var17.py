@@ -1,4 +1,6 @@
 def var7_main():
+    import streamlit as st
+    import matplotlib.pyplot as plt
     st.title("Cтоимость билета у пассажиров по каждому пункту посадки")
     choice = st.selectbox('Выберите тип стоимости:', ['Минимальная', 'Средняя', 'Максимальная'])
     with open("data.csv") as file:
@@ -83,6 +85,3 @@ def var7_main():
             plt.ylabel("Стоимость")
             plt.title("Средняя стоимость билетов по пунктам отправления")
             st.pyplot(fig)
-
-
-
