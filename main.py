@@ -34,8 +34,8 @@ elif chois == variants[0]:
     var7_main()
 elif chois == variants[1]:
     var11_main()
-#elif chois == variants[2]:
-#    var12_main()
+elif chois == variants[2]:
+    var12_main()
 elif chois == variants[3]:
     var14_main()
 elif chois == variants[4]:
