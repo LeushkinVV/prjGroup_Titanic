@@ -5,13 +5,14 @@
 # 1. Леушкин Виталий Владимирович
 #       Вариант 7: "Найти средний возраст пассажиров по каждому классу обслуживания (поле Pclass,
 #       указав количество братьев, сестер... (столбец SibSp): [0, …, 8]."
-# 2.
+# 2. Куницына Юлия Валерьевна
+#       Вариант 12: "Подсчитать количество и процент пропусков в данных для указанного столбца (из списка)"
 #
 
 import streamlit as st
 from var7 import var7_main
 from var11 import var11_main
-#from var12 import var12_main
+from var12 import var12_main
 from var14 import var14_main
 from var17 import var17_main
 
