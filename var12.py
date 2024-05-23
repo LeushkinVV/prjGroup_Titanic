@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+import streamlit as st
 import csv
 def var12_main():
     st.title('Отсутствие данных о пассажирах')
