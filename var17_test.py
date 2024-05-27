@@ -1,4 +1,4 @@
-from main import prices
+from var17 import prices
 
 def test_prices_test_min():
     lines = [
