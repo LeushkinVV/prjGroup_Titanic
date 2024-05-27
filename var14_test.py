@@ -1,4 +1,4 @@
-from Lab10 import work
+from var14 import work
 
 
 def test_work_1():
