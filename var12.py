@@ -1,68 +1,38 @@
 import matplotlib.pyplot as plt
 import streamlit as st
-import csv
+
 def var12_main():
+    def get_empty_data(lines, index):
+        miss = 0
+        total = len(lines)
+        val = 0
+        for line in lines:
+            lst = line.strip().split(',')
+            if lst[index] == '':
+                miss += 1
+                val = miss / total * 100
+        return miss, val
+
+    columns = ['Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
     st.title('Отсутствие данных о пассажирах')
     st.write('Для просмотра информации о количестве пассажиров, по которым нет данных, выберите соответствующую категорию')
-    choice = st.selectbox('Выберите категорию:', ['PassengerId',	'Survived',	'Pclass',	'Name',	'Sex',	'Age',	'SibSp','Parch',	'Ticket',	'Fare',	'Cabin',	'Embarked'])
-
-    columns = ['PassengerId',	'Survived',	'Pclass',	'Name',	'Sex',	'Age',	'SibSp',
-               'Parch',	'Ticket',	'Fare',	'Cabin',	'Embarked']
-
+    choice = st.selectbox('Выберите категорию:', columns)
     index = columns.index(choice)
 
+    if index > 3:
+        index += 1
+
     with open('data.csv') as file:
-        missing = 0
-        total = 0
-        val = 0
-        reader = csv.reader(file)
-        for line in reader:
-            total += 1
-            if line[index] == '':
-                missing += 1
-                val = missing / total * 100
+        lines = file.readlines()[1:]
 
-
-    if choice == 'PassengerId':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Survived':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Pclass':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Name':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Sex':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Age':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%':val}
-        st.table(data)
-    if choice == 'SibSp':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Parch':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Ticket':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Fare':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Cabin':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
-    if choice == 'Embarked':
-        data = {'Категория': choice, 'Количество пассажиров без данных': missing, 'Доля,%': val}
-        st.table(data)
+    miss, val = get_empty_data(lines, index)
+    data = {'Категория': ['Количество пассажиров без данных', 'Доля,%'], 'Данные': [miss, val]}
+    st.table(data)
 
     fig = plt.figure(figsize=(10, 5))
-    plt.bar(choice, missing)
+    plt.bar(choice, miss)
     plt.xlabel("Наименование категории")
     plt.ylabel("Количество пассажиров")
     plt.title("Количество пассажиров, по которым отсутствуют данные")
     st.pyplot(fig)
+
