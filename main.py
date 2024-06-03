@@ -42,16 +42,17 @@ st.text('')
 
 if chois == 'выберите вариант':
     st.info(f'Выберите вариант из выпадающего списка!')
-elif chois == variants[0]:
+else: 
     st.info(f'Представлен {variants_text[chois]}')
-    var7_main()
-elif chois == variants[1]:
-    var11_main()
-elif chois == variants[2]:
-    var12_main()
-elif chois == variants[3]:
-    var14_main()
-elif chois == variants[4]:
-    var17_main()
-else:
-    st.error(f'Вариант \"{chois}\" пока не реализован, выберите лругой вариант из выпадающего списка!')
+    if chois == variants[0]:
+        var7_main()
+    elif chois == variants[1]:
+        var11_main()
+    elif chois == variants[2]:
+        var12_main()
+    elif chois == variants[3]:
+        var14_main()
+    elif chois == variants[4]:
+        var17_main()
+    else:
+        st.error(f'Вариант \"{chois}\" пока не реализован, выберите лругой вариант из выпадающего списка!')
