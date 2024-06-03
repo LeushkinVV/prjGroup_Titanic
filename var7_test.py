@@ -41,4 +41,3 @@ def test_get_avg_test_filter():
     ]
     sibsp = 0
     assert get_avg(lines, sibsp) == [12.2, 0, 0]
-    
