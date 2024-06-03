@@ -2,11 +2,6 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 
-import matplotlib.pyplot as plt
-import streamlit as st
-
-
-
 def get_pas_count(lines, min_age):
     total = 0
     saved = 0
@@ -82,27 +77,7 @@ plt.ylabel('Доля выживших пассажиров')
 plt.title('Диаграмма')
 plt.legend()
 st.pyplot(fig)
-def var11_main():
-    st.title('Пассажиры Титаника ')
-    st.header('Доля погибших и спасенных пассажиров')
-    st.subheader('Возрастная категория')
-    st.markdown('1. «молодой» (до 30 лет)\n'
-                '2. «среднего возраста» (от 30 до 60)\n'
-                '3. «старый» (более 60 лет)\n')
-    st.write('Чтобы узнать долю выживших в определенной возратной категории, выберите возраст')
-    choise = st.selectbox('Выберете возраст:',
-                          ["до 30 лет",
-                        "от 30 до 60 лет",
-                        "старше 60 лет"])
-    x = ['до 30', 'от 30 до 60', 'от 60']
-    y = [val1, val2, val3]
-    tab = {'Возраст пассажиров': x, 'Доля погибших пассажиров': y}
-    st.dataframe(tab)
 
-    fig = plt.figure(figsize=[10, 5])
-    plt.bar(x, y)
-    plt.xlabel('Возраст пассажиров')
-    plt.ylabel('Доля погибших пассажиров')
-    plt.title('Диаграмма')
-    plt.legend()
-    st.pyplot(fig)
+def var11_main():
+ 
+    
