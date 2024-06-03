@@ -16,7 +16,7 @@ def get_pas_count(lines, min_age):
     return saved / total*100, (total - saved)  / total*100
 with open('data.csv') as file:
     text = file.readlines()
-    print(get_pas_count(text[1:], min_age =  0))
+    #print(get_pas_count(text[1:], min_age =  0))
 
 def get_pas_count(lines, min_age):
     total = 0
@@ -32,7 +32,7 @@ def get_pas_count(lines, min_age):
     return saved / total*100, (total - saved)  / total*100
 with open('data.csv') as file:
     text = file.readlines()
-    print(get_pas_count(text[1:],30))
+    #print(get_pas_count(text[1:],30))
 
 def get_pas_count(lines, min_age):
     total = 0
@@ -49,7 +49,7 @@ def get_pas_count(lines, min_age):
 with open('data.csv') as file:
     text = file.readlines()
 
-    print(get_pas_count(text[1:],60))
+    #print(get_pas_count(text[1:],60))
 
 
 def var11_main():   
