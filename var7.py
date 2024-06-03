@@ -38,15 +38,6 @@ def get_avg(lines: [], sibsp: int):
         ]
 
 
-def get_AVG_age(sibsp: int):
-# открываем файл
-    with open('data.csv') as file:
-# lines - список строк, читаем в lines файл
-        lines = file.readlines()
-# возвращаем среднее значение возраста по классам с учетом заданного фильтра sibsp
-    return get_avg(lines, sibsp)
-
-
 def var7_main():
     st.header('Данные пассажиров Титаника')
     # выводим текст
@@ -55,7 +46,13 @@ def var7_main():
     # Определяем элемент управления number_input
     ss = st.number_input('Значение поля SibSp:', 0, 8, 0, 1)
     # вычисляем средний возраст пассажтиров по классам в соответствии с фильтром из number_input
-    avg_age = get_AVG_age(ss)
+    
+# открываем файл
+    with open('data.csv') as file:
+# lines - список строк, читаем в lines файл
+        lines = file.readlines()
+# возвращаем среднее значение возраста по классам с учетом заданного фильтра sibsp
+    avg_age = get_avg(lines, ss)
 
     # определяем подписи для таблицы и графика в виде списков
     pclass = ['1 класс', '2 класс', '3 класс']
