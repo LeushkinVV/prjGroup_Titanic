@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
-
+def fun():
 def get_pas_count(lines, min_age):
     total = 0
     saved = 0
