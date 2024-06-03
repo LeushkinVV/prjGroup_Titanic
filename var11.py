@@ -52,6 +52,8 @@ with open('data.csv') as file:
     print(get_pas_count(text[1:],60))
 
 
+def var11_main():
+    
 columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
 st.title('Пассажиры Титаника')
 st.write('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:')
@@ -78,6 +80,5 @@ plt.title('Диаграмма')
 plt.legend()
 st.pyplot(fig)
 
-def var11_main():
  
     
