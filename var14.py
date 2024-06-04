@@ -90,4 +90,4 @@ def work(lines):
 # # print("Родственников у выживших: m {} - f {}".format(sum_liave_m, sum_liave_f))
 
 # # show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
-var14_main()
+# var14_main()
