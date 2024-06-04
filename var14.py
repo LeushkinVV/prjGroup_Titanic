@@ -85,15 +85,5 @@ def work(lines):
     return sum_life_m, sum_life_f, sum_dead_m, sum_dead_f
 
 
-# lines = get_data(filename)
-# # print(lines)
-#
-# sum_life_m, sum_life_f, sum_dead_m, sum_dead_f = work(lines)
-#
-# # print("Родственников у погибших: m {} - f {}".format(sum_dead_m,sum_dead_f))
-# # print("Родственников у выживших: m {} - f {}".format(sum_life_m, sum_life_f))
-#
-# show_web(sum_life_m, sum_life_f, sum_dead_m, sum_dead_f)
-
 
 # var14_main()
