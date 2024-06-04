@@ -1,19 +1,21 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
-def var12_main():
-    def get_empty_data(lines, index):
-        miss = 0
-        total = len(lines)
-        val = 0
-        for line in lines:
-            lst = line.strip().split(',')
-            if lst[index] == '':
-                miss += 1
-                val = miss / total * 100
-        return miss, val
 
-    columns = ['Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+def get_empty_data(lines, index):
+    miss = 0
+    total = len(lines)
+    val = 0
+    for line in lines:
+        lst = line.strip().split(',')
+        if lst[index] == '':
+            miss += 1
+            val = miss / total * 100
+    return miss, val
+def var12_main():
+
+
+    columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
     st.title('Отсутствие данных о пассажирах')
     st.write('Для просмотра информации о количестве пассажиров, по которым нет данных, выберите соответствующую категорию')
     choice = st.selectbox('Выберите категорию:', columns)
