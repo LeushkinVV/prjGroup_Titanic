@@ -69,8 +69,7 @@ def work(lines):
 
         sex = tmpR[1]
 
-        # print("who: {} sibsp: {} Prach: {} sex: {}".format(who,sibsp, parch, sex))
-        # if who.isdigit():
+
         # Суммируем родственников выживших и погибших
         if who == 0:
             if sex == 'male':
