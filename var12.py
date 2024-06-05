@@ -13,8 +13,6 @@ def get_empty_data(lines, index):
             val = miss / total * 100
     return miss, val
 def var12_main():
-
-
     columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
     st.title('Отсутствие данных о пассажирах')
     st.write('Для просмотра информации о количестве пассажиров, по которым нет данных, выберите соответствующую категорию')
