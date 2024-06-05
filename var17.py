@@ -63,7 +63,6 @@ def var17_main():
         st.title("Средняя стоимость билетов по пунктам отправления")
 
     st.table(data)
-
     fig = plt.figure(figsize=(10, 5))
     plt.bar(pclass, prices_list)
     plt.xlabel("Пункты отправления")
