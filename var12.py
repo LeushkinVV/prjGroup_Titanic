@@ -12,8 +12,11 @@ def get_empty_data(lines, index):
             miss += 1
             val = miss / total * 100
     return miss, val
+
+
 def var12_main():
-    columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
+    columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex', 
+               'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
     st.title('Отсутствие данных о пассажирах')
     st.write('Для просмотра информации о количестве пассажиров, по которым нет данных, выберите соответствующую категорию')
     choice = st.selectbox('Выберите категорию:', columns)
@@ -35,4 +38,3 @@ def var12_main():
     plt.ylabel("Количество пассажиров")
     plt.title("Количество пассажиров, по которым отсутствуют данные")
     st.pyplot(fig)
-
