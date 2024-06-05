@@ -1,5 +1,6 @@
 from var17 import prices
 
+
 def test_prices_test_min():
     lines = [
 
@@ -11,8 +12,9 @@ def test_prices_test_min():
         '6, 0, 3,  0, 0, 0, 8.4583, 0,Q',
         '7, 0, 1, 54, 0, 0, 51.8625, E46,S'
     ]
-    option = 'min' #Поиск минимальных стоимостей
+    option = 'min'  # Поиск минимальных стоимостей
     assert prices(lines, option) == [71.2833, 7.25, 8.4583]
+
 
 def test_prices_test_max():
     lines = [
@@ -24,8 +26,9 @@ def test_prices_test_max():
         '35,0,1,28,1,0,PC 17604,  82.1708,,C',
         '36,0,1,42,1,0,113789,    52,,S'
     ]
-    option = 'max' #Поиск максимальных стоимостей
+    option = 'max'  # Поиск максимальных стоимостей
     assert prices(lines, option) == [146.5208, 52, 7.75]
+
 
 def test_prices_test_avg():
     lines = [
@@ -40,5 +43,6 @@ def test_prices_test_avg():
         '75,1,3,32,0,0,1601,        56.4958,,S',
         '76,0,3,25,0,0,348123,      7.65,F G73,S'
     ]
-    option = 'avg' #Поиск средних стоимостей
+
+    option = 'avg'  # Поиск средних стоимостей
     assert prices(lines, option) == [21.09, 33.95, 7.75]

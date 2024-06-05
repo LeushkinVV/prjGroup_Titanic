@@ -39,8 +39,10 @@ def prices(lines, option):
 def var17_main():
     st.title("Стоимость билета у пассажиров по каждому пункту посадки")
 
-    choice = st.selectbox('Выберите тип стоимости:', ['Минимальная', 'Средняя', 'Максимальная'])
-    option_map = {'Минимальная': 'min', 'Средняя': 'avg', 'Максимальная': 'max'}
+    choice = st.selectbox('Выберите тип стоимости:',
+                          ['Минимальная', 'Средняя', 'Максимальная'])
+    option_map = {'Минимальная': 'min', 'Средняя': 'avg',
+                  'Максимальная': 'max'}
     option = option_map[choice]
 
     with open("data.csv") as file:
@@ -68,6 +70,7 @@ def var17_main():
     plt.ylabel("Стоимость")
     plt.title(f"{choice} стоимость  билетов по пунктам отправления")
     st.pyplot(fig)
+
 
 
 
