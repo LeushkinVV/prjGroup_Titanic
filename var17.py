@@ -70,8 +70,3 @@ def var17_main():
     plt.ylabel("Стоимость")
     plt.title(f"{choice} стоимость  билетов по пунктам отправления")
     st.pyplot(fig)
-
-
-
-
-
