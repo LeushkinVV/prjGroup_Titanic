@@ -1,1 +1,4 @@
 matplotlib
+streamlit
+pytest
+flake8

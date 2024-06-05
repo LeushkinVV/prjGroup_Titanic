@@ -1,5 +1,6 @@
 from var7 import get_avg
 
+
 def test_get_avg_test_avg():
     lines = [
         '0,1,Pcalss,3,4,5,Age,SibSp',
@@ -11,7 +12,7 @@ def test_get_avg_test_avg():
         '6,0,3,0,0,0,44.2,0',
     ]
     sibsp = 0
-    assert get_avg(lines,sibsp) == [7.2, 37, 33.1]
+    assert get_avg(lines, sibsp) == [7.2, 37, 33.1]
 
 
 def test_get_avg_test_age_false():
@@ -25,7 +26,7 @@ def test_get_avg_test_age_false():
         '6,0,3,0,0,0,44.2,0',
     ]
     sibsp = 0
-    assert get_avg(lines,sibsp) == [12.2, 37, 44.2]
+    assert get_avg(lines, sibsp) == [12.2, 37, 44.2]
 
 
 def test_get_avg_test_filter():
@@ -39,4 +40,4 @@ def test_get_avg_test_filter():
         '6,0,3,0,0,0,44.2,5',
     ]
     sibsp = 0
-    assert get_avg(lines,sibsp) == [12.2, 0, 0]
+    assert get_avg(lines, sibsp) == [12.2, 0, 0]
