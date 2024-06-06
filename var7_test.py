@@ -51,4 +51,3 @@ def test_get_avg_test_filter():
         ',,3,",",,44.2,5',
     ]
     assert get_avg(lines, 0) == [12.2, 0, 0]
-
