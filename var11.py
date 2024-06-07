@@ -12,8 +12,8 @@ def get_pas_count(lines, min_age):
             total += 1
             if data[1] == "1":
                saved += 1
-    return round(saved[level_age_30] / total[level_age_30] * 100, 2), \
-        round((total[level_age_30] - saved[level_age_30]) / total[level_age_30] * 100, 2)
+    return round(saved / total * 100, 2), \
+        round((total - saved) / total * 100, 2)
     
 def var11_main():
     columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
