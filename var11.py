@@ -28,10 +28,7 @@ def var11_main():
     min_age, val = get_pas_count(lines, index * 30)
     data = {'Возраст': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
     st.table(data)
-
-    fig = plt.figure(figsize=[10, 5])
-    plt.bar(choice, val)
-    
+   
     data = {'Доля выживших': val1, 'Погибшие': val2}
     labels = list(data.keys())
     sizes = list(data.values())
