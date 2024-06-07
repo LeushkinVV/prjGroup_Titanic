@@ -12,8 +12,9 @@ def get_pas_count(lines, min_age):
             total += 1
             if data[1] == "1":
                saved += 1
-    return saved / total * 100, (total - saved) / total * 100
-
+    return round(saved[level_age_30] / total[level_age_30] * 100, 2), \
+        round((total[level_age_30] - saved[level_age_30]) / total[level_age_30] * 100, 2)
+    
 def var11_main():
     columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
     st.title('Пассажиры Титаника')
@@ -31,13 +32,7 @@ def var11_main():
     fig = plt.figure(figsize=[10, 5])
     plt.bar(choice, val)
     
-    # plt.xlabel('Возраст пассажиров')
-    # plt.ylabel('Доля выживших пассажиров')
-    # plt.title('Диаграмма')
-    # plt.legend()
-    # st.pyplot(fig)
-    labels = 'Выжившие', 'Погибшие'
-    sizes = [choice, val]
-    fig1, ax1 = plt.subplots()
-    ax1.pie(sizes, labels=labels, autopct='%1.1f%%')
-    plt.show()
+    data = {'Доля выживших': val1, 'Погибшие': val2}
+    labels = list(data.keys())
+    sizes = list(data.values())
+    plt.pie(sizes, labels=labels)
