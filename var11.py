@@ -30,7 +30,7 @@ def var11_main():
     st.table(data)
 
     fig = plt.figure(figsize=(10, 5))   
-    data = {f'Доля выживших': {min_age}%':min_age, f'Доля погибших: {val}%': val}
+    data = {f'Доля выживших: {min_age}%':min_age, f'Доля погибших: {val}%': val}
     labels = list(data.keys())
     sizes = list(data.values())
     plt.pie(sizes, labels=labels)
