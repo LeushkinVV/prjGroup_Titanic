@@ -29,7 +29,7 @@ def var11_main():
     data = {'Возраст': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
     st.table(data)
 
-    fig = plt.figure(figsize=(10, 5))   
+    fig = plt.figure(figsize=(7, 4))   
     data = {f'Доля выживших: {min_age}%':min_age, f'Доля погибших: {val}%': val}
     labels = list(data.keys())
     sizes = list(data.values())
