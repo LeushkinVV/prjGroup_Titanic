@@ -30,6 +30,7 @@ def var11_main():
 
     fig = plt.figure(figsize=[10, 5])
     plt.bar(choice, val)
+    
     plt.xlabel('Возраст пассажиров')
     plt.ylabel('Доля выживших пассажиров')
     plt.title('Диаграмма')
