@@ -31,8 +31,13 @@ def var11_main():
     fig = plt.figure(figsize=[10, 5])
     plt.bar(choice, val)
     
-    plt.xlabel('Возраст пассажиров')
-    plt.ylabel('Доля выживших пассажиров')
-    plt.title('Диаграмма')
-    plt.legend()
-    st.pyplot(fig)
+    # plt.xlabel('Возраст пассажиров')
+    # plt.ylabel('Доля выживших пассажиров')
+    # plt.title('Диаграмма')
+    # plt.legend()
+    # st.pyplot(fig)
+    labels = 'Выжившие', 'Погибшие'
+    sizes = [choice, val]
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, labels=labels, autopct='%1.1f%%')
+    plt.show()
