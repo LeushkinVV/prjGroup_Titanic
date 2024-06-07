@@ -33,5 +33,6 @@ def var11_main():
     data = {f'Доля выживших: {min_age}%':min_age, f'Доля погибших: {val}%': val}
     labels = list(data.keys())
     sizes = list(data.values())
-    plt.pie(sizes, labels=labels)
+    colors = ['purple', 'blue']
+    plt.pie(sizes, labels=labels, colors=colors)
     st.pyplot(fig)
