@@ -29,7 +29,7 @@ def var11_main():
     data = {'Возраст': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
     st.table(data)
    
-    data = {'Доля выживших': val1, 'Погибшие': val2}
+    data = {'Доля выживших': min_age, 'Погибшие': val}
     labels = list(data.keys())
     sizes = list(data.values())
     plt.pie(sizes, labels=labels)
