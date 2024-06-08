@@ -17,9 +17,6 @@ def get_empty_data(lines, index):
 def var12_main():
     columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex',
                'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
-    st.title('Отсутствие данных о пассажирах')
-    st.write('Для просмотра информации о количестве пассажиров, по которым нет'
-             ' данных, выберите соответствующую категорию')
     choice = st.selectbox('Выберите категорию:', columns)
     index = columns.index(choice)
 
