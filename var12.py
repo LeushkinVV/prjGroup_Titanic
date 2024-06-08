@@ -29,10 +29,9 @@ def var12_main():
     miss, val = get_empty_data(lines, index)
     st.dataframe({'Категория': ['Количество пассажиров без данных', 'Доля,%'],
                   'Данные': [miss, val]})
-
-    fig = plt.figure(figsize=(10, 5))
-    plt.bar(choice, miss)
-    plt.xlabel("Наименование категории")
-    plt.ylabel("Количество пассажиров")
-    plt.title("Количество пассажиров, по которым отсутствуют данные")
-    st.pyplot(fig)
+    if miss > 0:
+        fig = plt.figure(figsize=(10, 5))
+        plt.bar(['Количество,шт.', 'Доля,%'], [miss, val])
+        plt.ylabel('Данные')
+        plt.title("Количество и доля пассажиров, по которым отсутствуют данные")
+        st.pyplot(fig)
