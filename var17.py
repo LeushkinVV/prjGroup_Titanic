@@ -49,23 +49,21 @@ def var17_main():
         lines = file.readlines()[1:]
         prices_list = prices(lines, option)
 
-    pclass = ['C', 'S', 'Q']
+    pclass = ['Шербур', 'Квинстаун', 'Саутгемптон']
     data = {'Пункт отправления': pclass}
 
     if option == 'min':
         data['Минимальная стоимость'] = prices_list
-        st.title("Минимальная стоимость билетов по пунктам отправления")
+
     elif option == 'max':
         data['Максимальная стоимость'] = prices_list
-        st.title("Максимальная стоимость билетов по пунктам отправления")
+
     elif option == 'avg':
         data['Средняя стоимость'] = prices_list
-        st.title("Средняя стоимость билетов по пунктам отправления")
 
-    st.table(data)
+    st.dataframe(data)
     fig = plt.figure(figsize=(10, 5))
     plt.bar(pclass, prices_list)
     plt.xlabel("Пункты отправления")
     plt.ylabel("Стоимость")
-    plt.title(f"{choice} стоимость  билетов по пунктам отправления")
     st.pyplot(fig)
