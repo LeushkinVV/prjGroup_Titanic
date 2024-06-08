@@ -27,9 +27,8 @@ def var12_main():
         lines = file.readlines()[1:]
 
     miss, val = get_empty_data(lines, index)
-    data = {'Категория': ['Количество пассажиров без данных', 'Доля,%'],
-            'Данные': [miss, val]}
-    st.table(data)
+    st.dataframe({'Категория': ['Количество пассажиров без данных', 'Доля,%'],
+                  'Данные': [miss, val]})
 
     fig = plt.figure(figsize=(10, 5))
     plt.bar(choice, miss)
