@@ -12,10 +12,11 @@ def get_empty_data(lines, index):
             miss += 1
             val = miss / total * 100
     return miss, val
+
+
 def var12_main():
-    columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
-    st.title('Отсутствие данных о пассажирах')
-    st.write('Для просмотра информации о количестве пассажиров, по которым нет данных, выберите соответствующую категорию')
+    columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex',
+               'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
     choice = st.selectbox('Выберите категорию:', columns)
     index = columns.index(choice)
 
@@ -26,13 +27,11 @@ def var12_main():
         lines = file.readlines()[1:]
 
     miss, val = get_empty_data(lines, index)
-    data = {'Категория': ['Количество пассажиров без данных', 'Доля,%'], 'Данные': [miss, val]}
-    st.table(data)
-
-    fig = plt.figure(figsize=(10, 5))
-    plt.bar(choice, miss)
-    plt.xlabel("Наименование категории")
-    plt.ylabel("Количество пассажиров")
-    plt.title("Количество пассажиров, по которым отсутствуют данные")
-    st.pyplot(fig)
-
+    st.dataframe({'Категория': ['Количество пассажиров без данных', 'Доля,%'],
+                  'Данные': [miss, val]})
+    if miss > 0:
+        fig = plt.figure(figsize=(10, 5))
+        plt.bar(['Количество,шт.', 'Доля,%'], [miss, val])
+        plt.ylabel('Данные')
+        plt.title("Количество и доля пассажиров, по которым отсутствуют данные")
+        st.pyplot(fig)

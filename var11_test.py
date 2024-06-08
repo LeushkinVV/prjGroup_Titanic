@@ -1,4 +1,40 @@
-from var11 import get_pass_count
-def test_true():
-    lines = ['0,1,1,2,3,4,5,age']
-    assert get_pass_count(lines) == ()
+from var11 import get_pas_count
+
+
+def test_get_pas_count_age_0_30():
+    lines = [
+        ',1,,",",,12.2',
+        ',1,,",",, 2.2',
+        ',1,,",",,  32',
+        ',0,,",",,  42',
+        ',1,,",",,  62',
+        ',1,,",",,  70',
+        ',0,,",",,  80'
+    ]
+    assert get_pas_count(lines, 0) == (100, 0)
+
+
+def test_get_pas_count_age_30_60():
+    lines = [
+        ',1,,",",,12.2',
+        ',1,,",",,2.2',
+        ',1,,",",,32',
+        ',0,,",",,42',
+        ',1,,",",,62',
+        ',1,,",",,70',
+        ',0,,",",,80'
+    ]
+    assert get_pas_count(lines, 30) == (50, 50)
+
+
+def test_get_pas_count_age_60_max():
+    lines = [
+        ',1,,",",,12.2',
+        ',1,,",",,2.2',
+        ',1,,",",,32',
+        ',0,,",",,42',
+        ',1,,",",,62',
+        ',1,,",",,70',
+        ',0,,",",,80'
+    ]
+    assert get_pas_count(lines, 60) == (66.67, 33.33)
