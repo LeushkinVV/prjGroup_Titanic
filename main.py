@@ -28,11 +28,11 @@ from var12 import var12_main
 from var14 import var14_main
 from var17 import var17_main
 
-st.header('Практическое занятие №11')
 # выводим картинку
 st.image('titanic.jpg')
 # выводим текст заголоака
 
+st.header('Практические задания №11, 12, 13, 14')
 st.header('Работа группы №3')
 variants = [
     'Вариант 7',
