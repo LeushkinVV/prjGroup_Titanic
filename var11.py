@@ -26,7 +26,7 @@ def var11_main():
         lines = file.readlines()[1:]
 
     min_age, val = get_pas_count(lines, index * 30)
-    data = {'Возраст': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
+    data = {'Категория': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
     st.table(data)
 
     fig = plt.figure(figsize=(7, 4))   
@@ -35,4 +35,5 @@ def var11_main():
     sizes = list(data.values())
     colors = ['PaleGreen', 'MediumSlateBlue']
     plt.pie(sizes, labels=labels, colors=colors)
+    plt.title(f'Доля погибших в группе {choice}')
     st.pyplot(fig)
