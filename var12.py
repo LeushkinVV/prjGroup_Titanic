@@ -17,9 +17,6 @@ def get_empty_data(lines, index):
 def var12_main():
     columns = ['PassengerId',	'Survived',	'Pclass',	'Name', 'Sex',
                'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
-    st.title('Отсутствие данных о пассажирах')
-    st.write('Для просмотра информации о количестве пассажиров, по которым нет'
-             'данных, выберите соответствующую категорию')
     choice = st.selectbox('Выберите категорию:', columns)
     index = columns.index(choice)
 
@@ -30,9 +27,8 @@ def var12_main():
         lines = file.readlines()[1:]
 
     miss, val = get_empty_data(lines, index)
-    data = {'Категория': ['Количество пассажиров без данных', 'Доля,%'],
-            'Данные': [miss, val]}
-    st.table(data)
+    st.dataframe({'Категория': ['Количество пассажиров без данных', 'Доля,%'],
+                  'Данные': [miss, val]})
 
     fig = plt.figure(figsize=(10, 5))
     plt.bar(choice, miss)
