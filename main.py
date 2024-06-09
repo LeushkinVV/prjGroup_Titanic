@@ -32,7 +32,7 @@ from var17 import var17_main
 st.image('titanic.jpg')
 # выводим текст заголоака
 
-st.header('Практические задания №11, 12, 13, 14')
+st.header('Пассажиры Титаника')
 st.header('Работа группы №3')
 variants = [
     'Вариант 7',
@@ -59,7 +59,6 @@ variants_text = {
 }
 
 chois = st.selectbox('Выберите вариант работы', ['выберите вариант']+variants)
-st.text('')
 
 if chois == 'выберите вариант':
     st.info('Выберите вариант из выпадающего списка!')

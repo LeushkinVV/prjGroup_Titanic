@@ -11,7 +11,7 @@ def get_empty_data(lines, index):
         if lst[index] == '':
             miss += 1
             val = miss / total * 100
-    return miss, val
+    return miss, round(val,2)
 
 
 def var12_main():
@@ -27,11 +27,11 @@ def var12_main():
         lines = file.readlines()[1:]
 
     miss, val = get_empty_data(lines, index)
-    st.dataframe({'Категория': ['Количество пассажиров без данных', 'Доля,%'],
-                  'Данные': [miss, val]})
+    st.dataframe({'Наименование': ['Пассажиров без данных,шт.', 'Доля,%'],
+                  'Значение': [miss, val]})
     if miss > 0:
         fig = plt.figure(figsize=(10, 5))
         plt.bar(['Количество,шт.', 'Доля,%'], [miss, val])
-        plt.ylabel('Данные')
+        plt.ylabel('Значение')
         plt.title("Количество и доля пассажиров, по которым отсутствуют данные")
         st.pyplot(fig)
