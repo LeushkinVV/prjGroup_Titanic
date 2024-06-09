@@ -17,7 +17,9 @@ def get_pas_count(lines, min_age):
     
 def var11_main():
     columns = ['до 30 лет', 'от 30 до 60 лет', 'старше 60 лет']
-    st.write('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:')
+    #refactoring
+    #st.title('Пассажиры Титаника')
+    #st.write('Для просмотра информации о доле выживших/погибших пассажиров выберите возраст:')
     choice = st.selectbox('Выберите возраст:', columns)
     index = columns.index(choice)
 
@@ -26,9 +28,13 @@ def var11_main():
 
     min_age, val = get_pas_count(lines, index * 30)
     data = {'Категория': ['Выжившие', 'Погибшие'], 'Доля,%': [min_age, val]}
-    st.table(data)
+    #refactoring
+    #st.table(data)
+    st.dataframe(data)
 
-    fig = plt.figure(figsize=(7, 4))   
+    #refactoring
+    #fig = plt.figure(figsize=(7, 4))
+    fig = plt.figure(figsize=(5, 2))
     data = {f'Доля выживших: {min_age}%':min_age, f'Доля погибших: {val}%': val}
     labels = list(data.keys())
     sizes = list(data.values())
