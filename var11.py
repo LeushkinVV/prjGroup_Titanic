@@ -42,3 +42,4 @@ def var11_main():
     plt.pie(sizes, labels=labels, colors=colors)
     plt.title(f'Доля погибших в группе {choice}')
     st.pyplot(fig)
+    
