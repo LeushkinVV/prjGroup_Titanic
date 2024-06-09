@@ -32,7 +32,7 @@ from var17 import var17_main
 st.image('titanic.jpg')
 # выводим текст заголоака
 
-st.header('Лабораторная работа №11, 12, 13, 14')
+st.header('Пассажиры Титаника')
 st.header('Работа группы №3')
 variants = [
     'Вариант 7',
