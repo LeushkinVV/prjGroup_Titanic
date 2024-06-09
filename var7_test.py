@@ -1,3 +1,6 @@
+# тестирование функции get_avg
+
+
 from var7 import get_avg
 
 
