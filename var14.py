@@ -13,10 +13,7 @@ filename = "data.csv"
 
 def show_web(sum_life_m, sum_life_f, sum_dead_m, sum_dead_f):
     data = ""
-    st.header('Данные пассажиров Титаника')
-    st.write('Для просмотра числа родственников у выживших и погибших'
-             'пассажиров, выберите пол пассажира')
-    option = st.selectbox('Значение поля Sex:', ['Мужской', 'Женский'])
+    option = st.selectbox('Пол:', ['Мужской', 'Женский'])
     if option == 'Мужской':
         data = {'тип': ['Родственников у выживших',
                         'Родственников у погибших'],
@@ -26,7 +23,7 @@ def show_web(sum_life_m, sum_life_f, sum_dead_m, sum_dead_f):
                         'Родственников у погибших'],
                 'данные': [sum_life_f, sum_dead_f]}
 
-    st.table(data)
+    st.dataframe(data)
     fig = plt.figure(figsize=(10, 5))
     plt.bar(data['тип'], data['данные'])
     xlab = "Пол {}".format(option)
