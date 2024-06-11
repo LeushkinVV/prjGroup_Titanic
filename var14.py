@@ -89,5 +89,3 @@ def work(lines):
     return sum_life_m, sum_life_f, sum_dead_m, sum_dead_f
 
 
-
-# var14_main()
