@@ -78,5 +78,3 @@ def work(lines):
             elif sex == 'female':
                 sum_life_f = sum_life_f + sibsp + parch
     return sum_life_m, sum_life_f, sum_dead_m, sum_dead_f
-
-
