@@ -54,8 +54,6 @@ def work(lines):
         # Разбиваю на столбцы
         tmpR = line.strip().rsplit(",", 8)
         tmp = line.strip().split(",", 3)
-        # print("tmp: {}".format(tmp[:3]))
-        # print("tmpR: {}".format(tmpR[1:]))
         # Считаем выживших и погибших
         who = -1
         # if tmp[1].isdigit():
