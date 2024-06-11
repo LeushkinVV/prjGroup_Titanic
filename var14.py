@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 
+
 def var14_main():
     lines = get_data(filename)
     sum_life_m, sum_life_f, sum_dead_m, sum_dead_f = work(lines)
