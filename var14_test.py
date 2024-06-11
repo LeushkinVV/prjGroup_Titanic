@@ -1,7 +1,6 @@
 from var14 import work
 
 
-
 def test_work_1():
     lines = [
         '6,0,male,,3,0,330877,8.4583,,Q',
