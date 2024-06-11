@@ -48,19 +48,12 @@ def work(lines):
     sum_dead_m = 0
     sum_dead_f = 0
     for line in lines:
-        tmpR = line.strip().rsplit(",", 8)
+        tmpr = line.strip().rsplit(",", 8)
         tmp = line.strip().split(",", 3)
-        who = -1
-        # if tmp[1].isdigit():
-        if str(tmp[1]).strip().isdigit():
-            who = int(tmp[1])
-        sibsp = 0
-        if str(tmpR[3]).strip().isdigit():
-            sibsp = int(tmpR[3])
-        parch = 0
-        if str(tmpR[4]).strip().isdigit():
-            parch = int(tmpR[4])
-        sex = tmpR[1]
+        who = isdigit(tmp[1],-1)
+        sibsp = isdigit(tmpr[3])
+        sex = tmpr[1]
+        parch = isdigit(tmpr[4])
         if who == 0:
             if sex == 'male':
                 sum_dead_m = sum_dead_m + sibsp + parch
@@ -72,3 +65,9 @@ def work(lines):
             elif sex == 'female':
                 sum_life_f = sum_life_f + sibsp + parch
     return sum_life_m, sum_life_f, sum_dead_m, sum_dead_f
+
+
+def isdigit(val, result=0):
+    if str(val).strip().isdigit():
+        return int(val)
+    return result
