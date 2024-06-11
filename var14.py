@@ -50,7 +50,7 @@ def work(lines):
     for line in lines:
         tmpr = line.strip().rsplit(",", 8)
         tmp = line.strip().split(",", 3)
-        who = isdigit(tmp[1],-1)
+        who = isdigit(tmp[1], -1)
         sibsp = isdigit(tmpr[3])
         sex = tmpr[1]
         parch = isdigit(tmpr[4])
