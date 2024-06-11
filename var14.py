@@ -27,7 +27,6 @@ def show_web(sum_life_m, sum_life_f, sum_dead_m, sum_dead_f):
                 'данные': [sum_life_f, sum_dead_f]}
 
     st.table(data)
-
     fig = plt.figure(figsize=(10, 5))
     plt.bar(data['тип'], data['данные'])
     xlab = "Пол {}".format(option)
@@ -40,7 +39,6 @@ def show_web(sum_life_m, sum_life_f, sum_dead_m, sum_dead_f):
 def get_data(fn):
     with open(fn) as file:
         lines = file.readlines()
-
     return lines[1:]
 
 
@@ -59,20 +57,15 @@ def work(lines):
         # if tmp[1].isdigit():
         if str(tmp[1]).strip().isdigit():
             who = int(tmp[1])
-        # print("who: {}".format(who))
         # количество братьеев, сестер в т.ч. сводных
         sibsp = 0
         if str(tmpR[3]).strip().isdigit():
             sibsp = int(tmpR[3])
-
         # количество родителей и детей
         parch = 0
         if str(tmpR[4]).strip().isdigit():
             parch = int(tmpR[4])
-
         sex = tmpR[1]
-
-
         # Суммируем родственников выживших и погибших
         if who == 0:
             if sex == 'male':
