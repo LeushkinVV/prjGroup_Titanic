@@ -48,25 +48,19 @@ def work(lines):
     sum_dead_m = 0
     sum_dead_f = 0
     for line in lines:
-        # Пропускаем первую строку
-        # Разбиваю на столбцы
         tmpR = line.strip().rsplit(",", 8)
         tmp = line.strip().split(",", 3)
-        # Считаем выживших и погибших
         who = -1
         # if tmp[1].isdigit():
         if str(tmp[1]).strip().isdigit():
             who = int(tmp[1])
-        # количество братьеев, сестер в т.ч. сводных
         sibsp = 0
         if str(tmpR[3]).strip().isdigit():
             sibsp = int(tmpR[3])
-        # количество родителей и детей
         parch = 0
         if str(tmpR[4]).strip().isdigit():
             parch = int(tmpR[4])
         sex = tmpR[1]
-        # Суммируем родственников выживших и погибших
         if who == 0:
             if sex == 'male':
                 sum_dead_m = sum_dead_m + sibsp + parch
