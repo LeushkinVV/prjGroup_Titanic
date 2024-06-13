@@ -65,4 +65,5 @@ def var17_main():
     plt.bar(pclass, prices_list)
     plt.xlabel("Пункты отправления")
     plt.ylabel("Стоимость")
+    plt.title('Стоимость билетов у пассажиров по каждому пункту посадки')
     st.pyplot(fig)
